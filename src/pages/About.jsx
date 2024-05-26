@@ -1,6 +1,7 @@
 import React from 'react'
 
 function About() {
+  // process done
   return (
     <section className='px-4 py-12 max-w-2xl mx-auto  min-h-[100vh]'>
       <h1 className='text-3xl font-bold mb-4 text-slate-800'>Welcome to Rentify</h1>

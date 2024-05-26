@@ -38,7 +38,7 @@ export default function SingleProperty2({ property,peopleData, setCurrUserData, 
         try {
             dispatch(updateUserStart());
 
-            const response = await fetch(`/api/user/update/property/updateLikes/${property.sellerId}`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/property/updateLikes/${property.sellerId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function SingleProperty2({ property,peopleData, setCurrUserData, 
 
 
 
-            const response2 = await fetch(`/api/user/update/updateMyLikedProperties/${currentUser._id}`, {
+            const response2 = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/updateMyLikedProperties/${currentUser._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

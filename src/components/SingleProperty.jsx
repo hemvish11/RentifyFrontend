@@ -38,7 +38,7 @@ export default function SingleProperty({ property, setCurrUserData, setClicked, 
     try {
       dispatch(updateUserStart());
 
-      const response = await fetch(`/api/user/update/property/updateLikes/${property.sellerId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/property/updateLikes/${property.sellerId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function SingleProperty({ property, setCurrUserData, setClicked, 
 
 
 
-      const response2 = await fetch(`/api/user/update/updateMyLikedProperties/${currentUser._id}`, {
+      const response2 = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/updateMyLikedProperties/${currentUser._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export default function SingleProperty({ property, setCurrUserData, setClicked, 
     setClicked(true);
 
     try {
-      let data = await fetch(`/api/user/properties/contact/${property.uniqueId}`);
+      let data = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/properties/contact/${property.uniqueId}`);
 
       if (!data.ok) {
         throw new Error('Network response was not ok ');

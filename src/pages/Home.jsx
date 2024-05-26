@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     async function doFetching() {
       try {
-        let data = await fetch(`/api/user/properties`);
+        let data = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/properties`);
 
         if (!data.ok) {
           throw new Error('Network response was not ok ' + response.statusText);

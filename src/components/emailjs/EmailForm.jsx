@@ -8,7 +8,7 @@ const EmailForm = ({ buyerMob, sellerMob, buyerEmail, sellerEmail, setIsEmailSen
         setButtonText("Please wait...")
 
         try {
-            let data = await fetch("/api/user/sendEmail", {
+            let data = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/sendEmail`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

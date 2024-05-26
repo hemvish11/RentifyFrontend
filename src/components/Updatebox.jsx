@@ -122,7 +122,7 @@ const UpdateBox = ({
         try {
             dispatch(updateUserStart());
 
-            const response = await fetch(`/api/user/update/property/${currentUser._id}`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/property/${currentUser._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

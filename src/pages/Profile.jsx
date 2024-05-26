@@ -53,7 +53,7 @@ export default function Profile() {
     try {
       dispatch(updateUserStart());
 
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/update/${currentUser._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -75,7 +75,7 @@ export default function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch("/api/auth/signout");
+      await fetch(`${import.meta.env.VITE_BACKEND}/api/auth/signout`);
       dispatch(signOut());
     } catch (error) {
       console.log(error);
@@ -86,7 +86,7 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
 
-      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/delete/${currentUser._id}`, {
         method: "DELETE",
         headers: {
           'Content-Type': 'application/json',

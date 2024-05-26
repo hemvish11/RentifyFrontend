@@ -65,7 +65,7 @@ function Seller() {
       console.log(currentUser)
 
       try {
-        let data = await fetch(`/api/user/properties/${currentUser._id}`);
+        let data = await fetch(`${import.meta.env.VITE_BACKEND}/api/user/properties/${currentUser._id}`);
 
         if (!data.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
